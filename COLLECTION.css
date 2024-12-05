@@ -1,0 +1,138 @@
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.114);
+  height: 100px;
+}
+
+nav {
+  top: 37px;
+  left: 271px;
+  width: 66vw;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  position: absolute;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+  color: rgb(0, 0, 0);
+}
+
+a::after {
+  background-color: rgb(129, 161, 255);
+  height: 3px;
+  width: 0;
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  transition: 0.6s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: rgb(135, 0, 0);
+}
+
+.block1 h2 {
+    font-size: 50px;
+    text-align: center;
+     color: blue;
+}
+
+.slideshow {
+    list-style-type: none;
+  }
+  
+  /** SLIDESHOW **/
+  .slideshow,
+  .slideshow:after { 
+      top: -42px; /*Not sure why I needed this fix*/
+          position: absolute;
+      width: 100%;
+      height: 444px;
+      left: 0px;
+      z-index: 0; 
+      margin-top: 20%;
+  }
+  
+  .slideshow li span { 
+          position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      color: transparent;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      z-index: 0;
+      animation: imageAnimation 30s linear infinite 0s; 
+  }
+  
+  
+  
+  .slideshow li:nth-child(1) span { 
+      background-image: url("https://belk.scene7.com/is/image/Belk/wk40_2024_spec_worl_brandshop_world_rl_fh?$DWP_PHOTO$"); 
+  }
+  .slideshow li:nth-child(2) span { 
+      background-image: url("https://belk.scene7.com/is/image/Belk/wk40_2024_spec_worl_brandshop_rl_children_fh?$DWP_PHOTO$");
+      animation-delay: 6s; 
+  }
+  .slideshow li:nth-child(3) span { 
+      background-image: url(" https://nickis.com/cdn/shop/collections/polo_ralphlauren_desktop.webp?v=1727258974");
+      animation-delay: 12s; 
+  }
+  .slideshow li:nth-child(4) span { 
+      background-image: url("https://wildenbergmode.nl/cdn/shop/collections/0822_purple_label_abington_lp_c01_img_1_65868727-b931-4193-b1f2-a81eab2c1035.jpg?v=1732190872");   
+      animation-delay: 18s; 
+  }
+  .slideshow li:nth-child(5) span { 
+      background-image: url(" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOFkbTwcYYY-Py4s4IQtwUBPtTIVzl-iW0MQ&s");
+      animation-delay: 24s; 
+  }
+  
+  
+  
+  @keyframes imageAnimation { 
+      0% { opacity: 0; animation-timing-function: ease-in; }
+      8% { opacity: 1; animation-timing-function: ease-out; }
+      17% { opacity: 1 }
+      25% { opacity: 0 }
+      100% { opacity: 0 }
+  }
+  
+  
+  @keyframes titleAnimation { 
+      0% { opacity: 0 }
+      8% { opacity: 1 }
+      17% { opacity: 1 }
+      19% { opacity: 0 }
+      100% { opacity: 0 }
+  }
+  
+  
+  .no-cssanimations .cb-slideshow li span {
+      opacity: 1;
+  }
